@@ -1,4 +1,4 @@
-read_verilog fmul_2.v
+read_verilog fmul_4.v
 read_liberty -lib osu018_stdcells.lib
 proc
 flatten
