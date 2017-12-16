@@ -1,0 +1,10 @@
+read_verilog add.v
+read_liberty -lib osu018_stdcells.lib
+proc
+flatten
+synth -top add
+write_verilog synth.v
+dfflibmap -liberty osu018_stdcells.lib
+abc -D 5000 -constr example.constr -liberty osu018_stdcells.lib
+stat -liberty osu018_stdcells.lib
+write_verilog gate.v
